@@ -1,0 +1,56 @@
+{
+  "name": "s200-battery-pino-logger",
+  "version": "0.1.0",
+  "description": "s200 request logs as pino records — one structured line per request through s200/logger's sink/format seams",
+  "type": "module",
+  "license": "MIT",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20.3"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "npm run typecheck && npm run build && node --test test/*.test.mjs",
+    "prepack": "npm run build"
+  },
+  "keywords": [
+    "s200",
+    "battery",
+    "pino",
+    "logger",
+    "logging",
+    "structured-logging",
+    "middleware",
+    "json-logs"
+  ],
+  "peerDependencies": {
+    "pino": "^9.0.0 || ^10.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.5.1",
+    "pino": "^10.4.0",
+    "s200": "^0.2.0",
+    "typescript": "~6.0.3"
+  },
+  "author": "wmzy",
+  "homepage": "https://github.com/wmzy/s200-battery-pino-logger#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wmzy/s200-battery-pino-logger.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wmzy/s200-battery-pino-logger/issues"
+  }
+}
